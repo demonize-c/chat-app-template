@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/utility.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-fluid h-100" >
+        <div class="row h-100" id="wrapper">
+            <!-- Sidebar -->
+            <nav class="p-0 m-0 bg-black-50 sidebar" id="sidebar_section" >
+                <div class="d-flex flex-row h-100">
+                    <!-- <div class="d-flex flex-column bg-light" id="sidebar_menu">
+                        <a href="#" class="menu-item"><i class="fas fa-cog"></i></a>
+                        <a href="#" class="menu-item"><i class="fas fa-bell"></i></a>
+                        <a href="#" class="menu-item"><i class="fas fa-sign-out-alt"></i></a>
+                    </div> -->
+                    <div class="flex-grow-1 p-0" id="sidebar_content">
+                        <div class="position-sticky">
+                            <div class="" id="menu_bar">
+                                <ul class="" id="menu_bar_menu">
+                                    <!-- <li class="menu-item">
+                                        <a href="" class="menu-link"><i class="fa fa-bell fa-lg"></i></a>
+                                    </li> -->
+                                    <li class="menu-item">
+                                        <a href="javascript:void(0);" class="menu-link"><i class="fa fa-cog fa-lg"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="" id="search_bar">
+                                <div class="search-input-container">
+                                    <i class="fas fa-search search-icon"></i>
+                                    <input type="text" id="search_user" class="form-control" placeholder="Search users...">
+                                </div>
+                            </div>
+                            <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span>Connected Users</span>
+                            </h6> -->
+                            <ul class="nav flex-column" id="chats">
+                                <li class="chat-item">
+                                    <a class="chat-link active" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <div class="chat-profile-img">
+                                                  <img class="" src="./assets/images/profile-img1.png" alt="">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="chat-title">Alice</span>
+                                                    <span class="chat-notification-badge badge bg-primary rounded-pill">2</span>
+                                                </div>
+                                                <small class="chat-preview-text">You: Sure, I'll get back to you.</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="chat-item">
+                                    <a class="chat-link" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <div class="chat-profile-img">
+                                                <img class="" src="./assets/images/profile-img2.png" alt="">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="chat-title">Bob</span>
+                                                </div>
+                                                <small class="chat-preview-text text-muted">Bob: Hey, are you free for a call?</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="chat-item">
+                                    <a class="chat-link" href="#">
+                                        <div class="d-flex align-items-center">
+                                           <div class="chat-profile-img">
+                                                <svg fill="#ddd" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.532 45.532" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765 S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53 c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012 c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592 c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"></path> </g> </g></svg>
+                                           </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="chat-title">Charlie</span>
+                                                    <span class="chat-notification-badge badge bg-primary rounded-pill">1</span>
+                                                </div>
+                                                <small class="chat-preview-text text-muted">Charlie: That sounds great!</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="" id="content_section">
+                <!-- Main Chat Area -->
+                    <!-- <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <div>
+                            <button class="btn me-2 d-lg-none" type="button" id="sidebar_toggle">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <h1 class="h2 d-inline-block">Chat with Alice</h1>
+                        </div>
+                    </div> -->
+                    <div class="" id="content_header">
+                          <div class="d-flex">
+                              <div class="d-flex justify-content-start align-items-center">
+                                    <button class="btn me-2 d-lg-none" type="button" id="sidebar_toggle">
+                                        <i class="fas fa-arrow-left"></i>
+                                    </button>
+                              </div>
+                              <div class="">
+                                  <div class="d-flex justify-content-start">
+                                       <div class="chat-header-img">
+                                           <img src="./assets/images/profile-img1.png" alt="" srcset="">
+                                       </div>
+                                       <div class="chat-header-content">
+                                           <span class="chat-header-title">Alice</span> <br>
+                                           <span class="chat-header-text">Last seen yesterday</span>
+                                       </div>
+                                  </div>
+                              </div>
+                          </div>
+                    </div>
+
+                    <!-- Chat Messages -->
+                    <div class="chat-messages">
+                        <div class="message received">
+                            <div class="message-body">
+                                <p class="message-text">Hey, how is the project going?</p>
+                                <span class="message-time">10:30 AM</span>
+                                <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <div class="message-body">
+                                <p class="message-text">It's going well. I've implemented the new UI changes.</p>
+                                <span class="message-time">10:31 AM</span>
+                                <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                        <div class="message received">
+                            <div class="message-body">
+                                <p class="message-text">Great! Can you send me a screenshot?</p>
+                                <span class="message-time">10:32 AM</span>
+                                <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <div class="message-body">
+                                <div class="chat-imggroup-container">
+                                       <div class="chat-imggroup">
+                                           <div class="chat-img-item">
+                                               <img src="./assets/images/group-img1.png" alt="">
+                                           </div>
+                                           <div class="chat-img-item">
+                                                <img src="./assets/images/group-img1.png" alt="">
+                                           </div>
+                                            <div class="chat-img-item">
+                                                <img src="./assets/images/group-img1.png" alt="">
+                                            </div>
+                                            <div class="chat-img-item">
+                                                <img src="./assets/images/group-img1.png" alt="">
+                                            </div>
+                                       </div>
+                                </div>
+                                <p class="message-text">Sure, I'll get back to you.</p>
+                                <span class="message-time">10:33 AM</span>
+                                <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <div class="message-body">
+                                <div class="chat-imggroup-container">
+                                       <div class="chat-video-group">
+                                           <div class="chat-video-item">
+                                               <div class="video-container">
+                                                    <video src="./assets/images/video.mp4"></video>
+                                                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                                               </div>
+                                           </div>
+                                           <div class="chat-video-item">
+                                                <div class="video-container">
+                                                    <video src="./assets/images/video.mp4"></video>
+                                                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                                                </div>
+                                           </div>
+                                            <div class="chat-video-item">
+                                                <div class="video-container">
+                                                    <video src="./assets/images/video.mp4"></video>
+                                                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                                               </div>
+                                            </div>
+                                            <div class="chat-video-item">
+                                                <div class="video-container">
+                                                    <video src="./assets/images/video.mp4"></video>
+                                                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                                               </div>
+                                            </div>
+                                       </div>
+                                </div>
+                                <p class="message-text">Sure, I'll get back to you.</p>
+                                <span class="message-time">10:33 AM</span>
+                                <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                        <div class="message received">
+                            <div class="message-body">
+                                <div class="chat-filegroup-container">
+                                    <ul class="chat-file-group">
+                                        <li class="chat-file-item">
+                                            <a href="" class="chat-file-link">
+                                                <i class="fa fa-file-alt me-2"></i>
+                                                <span>report-2025.pdf</span>
+                                            </a>
+                                        </li>
+                                        <li class="chat-file-item">
+                                            <a href="" class="chat-file-link">
+                                                <i class="fa fa-file-alt me-2"></i>
+                                                <span>report-2025.pdf</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="message-text">Here are the files you requested.</p>
+                                <span class="message-time">10:35 AM</span>
+                                <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <div class="message-body">
+                                <div class="replied-message">
+                                    <p><strong>Alice</strong></p>
+                                    <p><i class="fas fa-photo-video"></i> Media group</p>
+                                </div>
+                                <p class="message-text">Thanks! I'll review these shortly.</p>
+                                <span class="message-time">10:36 AM</span>
+                                <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message Input -->
+                    <div class="chat-input-group mt-auto">
+                        <div id="reply-preview" class="reply-preview-container d-none">
+                            <div class="reply-preview-content">
+                                <strong class="reply-preview-user"></strong>
+                                <p class="reply-preview-text"></p>
+                            </div>
+                            <button id="close-reply" class="btn-close"></button>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="message-input" class="form-control" placeholder="Type a message..." aria-label="Type a message">
+                            <button class="btn btn-outline-secondary" type="button" id="attach-file">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="btn btn-outline-secondary" type="button" id="attach-image">
+                                <i class="fas fa-image"></i>
+                            </button>
+                            <button class="btn btn-primary" type="button" id="send-button">
+                                <i class="fas fa-paper-plane"></i> Send
+                            </button>
+                        </div>
+                    </div>
+          </div><!-- content section-->
+        </div><!-- wrapper -->
+    </div> <!-- container fluid -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
