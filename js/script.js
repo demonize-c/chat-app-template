@@ -125,7 +125,13 @@ $(document).ready(function() {
    })
 
    $(document).on('click', '#chat_file_btn', function() {
-      $('#chat_file_btn_menu').toggleClass('active');
+         $menu = $('#chat_file_btn_menu');
+
+         if( $menu.hasClass('show') ) {
+             $menu.removeClass('show').addClass('hide');
+         }else {
+             $menu.removeClass('hide').addClass('show');
+         }
    });
 
    $(document).on('click','.ff-modal-close',function(){
