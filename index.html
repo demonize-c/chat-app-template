@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Chat App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -208,6 +208,22 @@
                                 <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
                             </div>
                         </div>
+                        <div class="message sent">
+                            <div class="message-body">
+                                <div class="chat-imggroup-container">
+                                       <div class="chat-link-group">
+                                            <div class="chat-link-item">
+                                                  <iframe src="https://www.youtube.com/watch?v=Xzh8xjimmp8" frameborder="0">
+
+                                                  </iframe>
+                                            </div>
+                                       </div>
+                                </div>
+                                <p class="message-text">Sure, I'll get back to you.</p>
+                                <span class="message-time">10:33 AM</span>
+                                <a href="#" class="reply-icon"><i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
                         <div class="message received">
                             <div class="message-body">
                                 <div class="chat-filegroup-container">
@@ -243,9 +259,32 @@
                             </div>
                         </div>
                     </div>
+                    <div id="chat_input_section">
+                           <div id="chat_input_container">
+                                 <div id="chat_file_btn_container">
+                                      <button type="button" id="chat_file_btn"><i class="fa fa-paperclip"></i></button>
+                                      <div id="chat_file_btn_menu">
+                                           <div class="menu-item">
+                                              <button type="button" class="ff-modal-trigger" data-ff-modal="#ff-modal-files"><i class="fa-solid fa-file"></i></button>
+                                           </div>
+                                           <div class="menu-item">
+                                              <button type="button" class="ff-modal-trigger" data-ff-modal="#ff-modal-images"><i class="fa-solid fa-image"></i></button>
+                                           </div>
+                                           <div class="menu-item">
+                                             <button type="button"  class="ff-modal-trigger" data-ff-modal="#ff-modal-videos"><i class="fa-solid fa-video"></i></button>
+                                          </div>
+                                          <div class="menu-item">
+                                             <button type="button"><i class="fa-solid fa-link"></i></button>
+                                          </div>
+                                      </div>
+                                 </div>
+                                 
+                                 <textarea type="text" class="form-control" id="chat_input"></textarea>
+                           </div>
+                    </div>
 
                     <!-- Message Input -->
-                    <div class="chat-input-group mt-auto">
+                    <!-- <div class="chat-input-group mt-auto">
                         <div id="reply-preview" class="reply-preview-container d-none">
                             <div class="reply-preview-content">
                                 <strong class="reply-preview-user"></strong>
@@ -265,11 +304,157 @@
                                 <i class="fas fa-paper-plane"></i> Send
                             </button>
                         </div>
-                    </div>
+                    </div> -->
           </div><!-- content section-->
         </div><!-- wrapper -->
     </div> <!-- container fluid -->
+    <!-- modals -->
+    <div class="ff-modal" id="ff-modal-images">
+        <div class="ff-modal-container">
+           <div class="ff-modal-header">
+               <h5 class="ff-modal-title">Send Images</h5>
+           </div>
+           <div class="ff-modal-body">
+            <div class="ff-item-group">
+                <div class="ff-item">
+                        <div class="ff-media-item">
+                            <div class="media-container">
+                                  <img src="./assets/images/group-img1.png" alt="">
+                            </div>
+                            <a class="remove-btn" href="javascript:void();">
+                               <i class="fa fa-trash icon"></i>
+                            </a>
+                        </div>
+                </div>
+                <div class="ff-item">
+                        <div class="ff-media-item">
+                            <div class="media-container">
+                                <img src="./assets/images/group-img1.png" alt="">
+                            </div>
+                            <a class="remove-btn" href="javascript:void();">
+                            <i class="fa fa-trash icon"></i>
+                            </a>
+                        </div>
+                </div>
+                <div class="ff-item">
+                        <div class="ff-media-item">
+                            <div class="media-container">
+                                <img src="./assets/images/group-img1.png" alt="">
+                            </div>
+                            <a class="remove-btn" href="javascript:void();">
+                            <i class="fa fa-trash icon"></i>
+                            </a>
+                        </div>
+                </div>
+            </div>
+          </div>
+            <div class="ff-modal-footer">
+                <div class="">
+                    <textarea class="form-control no-focus mb-3 caption-input auto-resize" max-resize="100" rows="1" placeholder="Type caption.."></textarea>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button type="button" class="btnz-transparent btnz-transparent-primary"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <div>
+                        <button type="button" class="btnz btnz-secondary ff-modal-close">Cancel</button>
+                        <button type="button" class="btnz btnz-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
 
+    <div class="ff-modal" id="ff-modal-files">
+        <div class="ff-modal-container">
+           <div class="ff-modal-header">
+               <h5 class="ff-modal-title">Send Files</h5>
+           </div>
+           <div class="ff-modal-body">
+               <div class="file-item-group">
+                    <div class="ff-item">
+                        <div class="ff-file-item d-flex justify-content-between">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <span class="ff-file-item-icon me-2">
+                                        <i class="fa fa-file"></i>
+                                    </span>
+                                    <span class="me-2">reports.pdf</span>
+                                    <span class="text-muted">1.2MB</span>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-trash text-black-50"></i>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+               </div>
+          </div>
+          <div class="ff-modal-footer">
+                <div class="">
+                    <textarea class="form-control no-focus mb-3 caption-input auto-resize" max-resize="100" rows="1" placeholder="Type caption.."></textarea>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button type="button" class="btnz-transparent btnz-transparent-primary"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <div>
+                        <button type="button" class="btnz btnz-secondary ff-modal-close">Cancel</button>
+                        <button type="button" class="btnz btnz-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+    <div class="ff-modal" id="ff-modal-videos">
+        <div class="ff-modal-container">
+        <div class="ff-modal-header">
+            <h5 class="ff-modal-title">Send Videos</h5>
+        </div>
+        <div class="ff-modal-body">
+            <div class="ff-item-group">
+                 <div class="ff-item">
+                        <div class="ff-media-item">
+                            <div class="media-container">
+                                <video src="./assets/images/video.mp4"></video>
+                                <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                            <a class="remove-btn" href="javascript:void();">
+                                <i class="fa fa-trash icon"></i>
+                            </a>
+                        </div>
+                 </div>
+                 <div class="ff-item">
+                    <div class="ff-media-item">
+                        <div class="media-container">
+                            <video src="./assets/images/video.mp4"></video>
+                            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                        <a class="remove-btn" href="javascript:void();">
+                            <i class="fa fa-trash icon"></i>
+                        </a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <div class="ff-modal-footer">
+            <div class="">
+                 <textarea class="form-control no-focus mb-3 caption-input auto-resize" max-resize="100" rows="1" placeholder="Type caption.."></textarea>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btnz-transparent btnz-transparent-primary"><i class="fa fa-plus"></i></button>
+                </div>
+                <div>
+                    <button type="button" class="btnz btnz-secondary ff-modal-close">Cancel</button>
+                    <button type="button" class="btnz btnz-primary">Send</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- ./modals -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>

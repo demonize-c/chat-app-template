@@ -124,4 +124,30 @@ $(document).ready(function() {
          $('#sidebar_section').removeClass('show').addClass('hide');
    })
 
+   $(document).on('click', '#chat_file_btn', function() {
+      $('#chat_file_btn_menu').toggleClass('active');
+   });
+
+   $(document).on('click','.ff-modal-close',function(){
+        $(this).closest('.ff-modal').removeClass('active');
+   })
+
+   $('.auto-resize').on('input', function () {
+         let maxResize = $(this).attr('max-resize');
+         maxResize = maxResize? parseInt(maxResize): 0;
+
+         if( this.scrollHeight < maxResize ) {
+
+             $(this).css('height', 'auto')
+                    .css('height', this.scrollHeight + 'px');
+         }
+  })
+  .css({overflow: 'hidden', resize: 'none'})
+  .each(function () {
+      $(this).css('height', this.scrollHeight + 'px');
+   });
+
+   $(document).on('click','.ff-modal-trigger', function() {
+       $( $(this).data('ff-modal') ).addClass('active');
+   })
 });
